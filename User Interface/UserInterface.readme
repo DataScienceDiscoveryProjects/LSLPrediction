@@ -1,0 +1,6 @@
+For the user interface, I have used mapbox API. I have plotted the dataset "Denver_Lead_Service_Lines.geojson" which is available on
+the LSL Prediction folder in google drive. In index.html, style: 'mapbox://styles/melmelmel/clp54u1sx00fh01pcc0wrh31b' refers to the style 
+that I have choosen in mapbox api and 
+mapboxgl.accessToken = 'pk.eyJ1IjoibWVsbWVsbWVsIiwiYSI6ImNscDRzZWNoZTFiMXoyanF2dTFmNndncjcifQ.mb1DVnKoJVbzFyJD1kupUg'; is 
+my access token for mapbox api. 
+    
