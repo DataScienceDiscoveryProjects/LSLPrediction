@@ -22,7 +22,7 @@ Special thanks to Dan Wang and Hung Bui, who actively supported our efforts both
 Our team with links to reach us are down below:
 - [Andrew Kerr](https://www.linkedin.com/in/andrewkerr82310/)
 - [Akash Iyer](https://www.linkedin.com/in/akash-v-iyer)
-- [Phuc Pham]()
+- [Phuc Pham](https://www.linkedin.com/in/frederickdpham/)
 - [Jasmine Andrade](https://www.linkedin.com/in/jasmine-andrade-742b61233/)
 - [Melad Mayaar](https://www.linkedin.com/in/ahmad-melad-mayaar-7109a3235/)
 - [Pranav Walimbe](https://www.linkedin.com/in/pranav-walimbe-9218461a6/)
