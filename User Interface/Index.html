@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Denver, Colorado: Lead Service Line</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+       /* 
+          Set Map Padding + Margin
+        */
+      body { 
+        margin: 0%; 
+        padding: 0%; 
+      }
+              /* 
+          Set Map Position
+        */
+      #map { 
+        position: absolute; 
+        top: 0%; 
+        bottom: 0%; 
+        width: 100%;  
+      }
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+    <script>
+    
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWVsbWVsbWVsIiwiYSI6ImNscDRzZWNoZTFiMXoyanF2dTFmNndncjcifQ.mb1DVnKoJVbzFyJD1kupUg';  //<---AccessToken begins with 'pk...'
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/melmelmel/clp54u1sx00fh01pcc0wrh31b',  //<------------------------------- Add WebMap or Style(MapBox webmap)
+      center: [-104.985071,39.739989], //<------------------------------------------------------------------ Initial Coordinates (get from google maps)
+      zoom: 16    //<----------------------------------------------------------------------------------------Initial Zoom Level
+    });
+
+/* 
+  User clicks on the map element.
+*/
+
+map.on('click', (event) => {
+
+  const coordinate = map.unproject(event.point);
+  const features = map.queryRenderedFeatures(event.point, {
+    layers: ['denver-lead-service-lines-ajtx2p'] // <----------------------------------------------------------------replace with your layer name
+  });
+  if (features.length == 0) {
+    return;
+  }
+  const feature = features[0];
+  console.log("ft",feature)
+  
+  
+
+  /* 
+    Create a popup
+  */
+const popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(coordinate)
+    .setHTML(
+    `<h3>Address: ${feature.properties.prem_full_}</h3><p>Lead: ${feature.properties.lsli_fin_1}</p>` //<------ Display Column Headings
+  )
+    .addTo(map);
+});
+    </script>
+  </body>
+</html>
